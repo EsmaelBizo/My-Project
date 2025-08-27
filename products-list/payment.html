@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+<html lang="en" dir="ltr"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Online Payment</title> 
+    <!-- Tailwind CDN --> 
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- SweetAlert2 (for success notification) --> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  </head> 
+  <body class="bg-gray-50 text-gray-900"> 
+    <header class="bg-white border-b"> 
+      <div 
+        class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between" 
+      > 
+        <h1 class="font-bold text-xl">Online Payment</h1> 
+        <a href="/" class="text-[#FFA52F] hover:underline">Back to Store</a> 
+      </div> 
+    </header> 
+ 
+    <main class="py-10"> 
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"> 
+        <div class="bg-white rounded-2xl shadow p-6 sm:p-8"> 
+          <h2 class="text-2xl font-bold mb-6"> 
+            Card Details (Visa/MasterCard) 
+          </h2> 
+ 
+          <!-- Form without validation (for practice) --> 
+          <form id="payment-form" class="space-y-6"> 
+            <!-- Buyer Information (optional for practice) --> 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Full Name on Card</label> 
+                <input 
+                  name="cardName" 
+                  type="text" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="e.g., Ahmed Ali" 
+                /> 
+              </div> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Email (for contact)</label> 
+                <input 
+                  name="email" 
+                  type="email" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="name@example.com" 
+                /> 
+              </div> 
+            </div> 
+ 
+            <!-- Card Information --> 
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4"> 
+              <div class="sm:col-span-2"> 
+                <label class="block text-sm font-medium mb-1">Card Number</label> 
+                <input 
+                  name="cardNumber" 
+                  type="text" 
+                  inputmode="numeric" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="4242 4242 4242 4242" 
+                /> 
+              </div> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">CVV</label> 
+                <input 
+                  name="cvv" 
+                  type="password" 
+                  inputmode="numeric" 
+                  maxlength="4" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="123" 
+                /> 
+              </div> 
+            </div> 
+ 
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4"> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Expiration (Month)</label> 
+                <input 
+                  name="expMonth" 
+                  type="text" 
+                  inputmode="numeric" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="MM" 
+                /> 
+              </div> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Expiration (Year)</label> 
+                <input 
+                  name="expYear" 
+                  type="text" 
+                  inputmode="numeric" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="YY" 
+                /> 
+              </div> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Country</label> 
+                <input 
+                  name="country" 
+                  type="text" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="Poland" 
+                /> 
+              </div> 
+            </div> 
+ 
+            <!-- Shipping Address (practice only) --> 
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">Address</label> 
+                <input 
+                  name="address" 
+                  type="text" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="Street address" 
+                /> 
+              </div> 
+              <div> 
+                <label class="block text-sm font-medium mb-1">City</label> 
+                <input 
+                  name="city" 
+                  type="text" 
+                  class="w-full rounded-lg border px-3 py-2 outline-none focus:ring focus:ring-[#ffa52fc0]" 
+                  placeholder="City" 
+                /> 
+              </div> 
+            </div> 
+ 
+            <div class="flex items-center justify-end gap-3 pt-2"> 
+              <a href="/" class="rounded-lg border px-4 py-2 hover:bg-gray-50">Cancel</a> 
+              <button 
+                type="submit" 
+                class="rounded-lg bg-[#FFA52F] text-white px-5 py-2.5 font-medium hover:bg-[#FFA52F] transition" 
+              > 
+                Complete Payment 
+              </button> 
+            </div> 
+          </form> 
+        </div> 
+      </div> 
+    </main> 
+ 
+    <!-- Page Script --> 
+    <script type="module" src="./src/payment.js"></script> 
+  </body> 
+</html> 
